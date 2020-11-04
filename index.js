@@ -1,4 +1,7 @@
+#!/usr/bin/env node
+
 const inquirer = require("inquirer");
+const generator = require("./generator");
 
 console.log("Hi, welcome to Dot Vue");
 
@@ -10,6 +13,9 @@ var questions = [
     validate: function (value) {
       if (value) {
         return true;
+      }
+      if (value === "template") {
+        return "template is a invalid .vue filename";
       }
       return "Please enter a valid .vue filename";
     },
@@ -41,7 +47,7 @@ var questions = [
       if (value && value.split(",").length > 0) {
         return true;
       }
-      return 'Please enter data properties like this: foo,bar,baz';
+      return "Please enter data properties like this: foo,bar,baz";
     },
   },
   {
@@ -60,7 +66,7 @@ var questions = [
       if (value && value.split(",").length > 0) {
         return true;
       }
-      return 'Please enter computed details like this: foo,bar,baz';
+      return "Please enter computed details like this: foo,bar,baz";
     },
   },
   {
@@ -79,7 +85,7 @@ var questions = [
       if (value && value.split(",").length > 0) {
         return true;
       }
-      return 'Please enter watch details like this: foo,bar,baz';
+      return "Please enter watch details like this: foo,bar,baz";
     },
   },
   {
@@ -98,7 +104,7 @@ var questions = [
       if (value && value.split(",").length > 0) {
         return true;
       }
-      return 'Please enter methods details like this: foo,bar,baz';
+      return "Please enter methods details like this: foo,bar,baz";
     },
   },
   {
@@ -150,7 +156,8 @@ var questions = [
   },
 ];
 
-inquirer.prompt(questions).then((answers) => {
+inquirer.prompt(questions).then((configs) => {
   console.log("\nOrder receipt:");
-  console.log(JSON.stringify(answers, null, "  "));
+  console.log(JSON.stringify(configs, null, "  "));
+  generator(configs);
 });
