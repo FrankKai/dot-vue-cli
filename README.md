@@ -4,8 +4,8 @@ Vue2.x single file component .vue generator.
 
 ### features
 
-1. Set name, data, computed, watch and choose lifecycles, methods by interactive command line.
-2. Import vuex, mapState, mapMutations, mapActions by interactive command line.
+1. Set `name`, `data`, `computed`, `watch` and choose `lifecycles`, `methods` by interactive command line.
+2. Import vuex, `mapState`, `mapMutations`, `mapActions` by interactive command line.
 
 ### install
 ```shell
@@ -15,7 +15,7 @@ npm install -g dot-vue-cli
 ### usage
 
 ```shell
-dot-vue;
+dot-vue
 ```
 
 Type `dot-vue` in terminal and follow the instructions.
