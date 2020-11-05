@@ -2,20 +2,29 @@
 
 Vue2.x single file component .vue generator.
 
-### feature
+### features
 
-1. Set name, data, computed, watch, lifecycle, methods by interactive command line.
+1. Set name, data, computed, watch and choose lifecycles, methods by interactive command line.
 2. Import vuex, mapState, mapMutations, mapActions by interactive command line.
+
+### install
+```shell
+npm install -g dot-vue-cli
+```
 
 ### usage
 
-```js
+```shell
 dot-vue;
 ```
 
 Type `dot-vue` in terminal and follow the instructions.
 
-### steps
+
+![](https://media.giphy.com/media/E8eIEQzZDYj2deWFEH/giphy.gif)
+
+
+### process
 
 #### 1.generate template configs
 
@@ -36,10 +45,9 @@ Type `dot-vue` in terminal and follow the instructions.
 };
 ```
 
-#### 2.generate target .vue file base on template.vue
-##### before
+#### 2.generate target .vue file based on template literals
 ```html
-<!--template.vue -->
+<!--template  literals-->
 <template>
   <div></div>
 </template>
@@ -66,8 +74,6 @@ export default {
 
 <style lang="scss" scoped></style>
 ```
-
-##### after
 
 ```html
 <!--target .vue file-->
@@ -99,3 +105,5 @@ export default {
 
 <style lang="scss" scoped></style>
 ```
+
+Enjoy it !

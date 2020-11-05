@@ -14,9 +14,6 @@ var questions = [
       if (value) {
         return true;
       }
-      if (value === "template") {
-        return "template is a invalid .vue filename";
-      }
       return "Please enter a valid .vue filename";
     },
   },

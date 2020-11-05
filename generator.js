@@ -1,5 +1,31 @@
 const fs = require("fs");
 const shell = require("shelljs");
+const template = `<template>
+  <div>
+  </div>
+</template>
+
+<script>
+import { {{mapState}} {{mapMutations}} {{mapActions}} } from 'vuex';
+
+export default {
+  name: {{ name }},
+  {{{data}}} { return {{ data }} },
+  computed: { {{ computed }} },
+  watch: { {{ watch }} },
+  {{beforeCreate}},
+  {{created}},
+  {{beforeMount}},
+  {{mounted}},
+  {{beforeUpdate}},
+  {{updated}},
+  {{beforeDestroy}},
+  {{destroyed}},
+  methods: { {{ methods }} },
+};
+</script>
+
+<style lang="scss" scoped></style>`;
 
 module.exports = (configs) => {
   if (!configs.filename) {
@@ -8,8 +34,7 @@ module.exports = (configs) => {
   }
 
   const file = `${configs.filename}.vue`;
-  const content = fs.readFileSync("./template.vue").toString();
-  fs.writeFileSync(`${file}`, content);
+  fs.writeFileSync(`${file}`, template);
 
   shell.sed("-i", "{{ name }}", JSON.stringify(configs.name), file);
 
@@ -19,7 +44,7 @@ module.exports = (configs) => {
     for (data of datas) {
       obj[data] = "";
     }
-    shell.sed("-i", "{{{data}}}", "data()", file);    
+    shell.sed("-i", "{{{data}}}", "data()", file);
     shell.sed("-i", "{{ data }}", JSON.stringify(obj), file);
   } else {
     shell.sed("-i", "{{{data}}}", "", file);
