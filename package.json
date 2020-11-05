@@ -1,6 +1,6 @@
 {
   "name": "dot-vue-cli",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "vue2单文件组件生成器，命令行式初始化组件。",
   "bin": {
     "dot-vue": "./index.js"
