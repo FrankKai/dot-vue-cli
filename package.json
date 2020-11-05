@@ -1,5 +1,5 @@
 {
-  "name": "dot-vue",
+  "name": "dot-vue-cli",
   "version": "0.0.2",
   "description": "vue2单文件组件生成器，命令行式初始化组件。",
   "bin": {
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FrankKai/dot-vue.git"
+    "url": "git+https://github.com/FrankKai/dot-vue-cli.git"
   },
   "author": "FrankKai",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/FrankKai/dot-vue/issues"
+    "url": "https://github.com/FrankKai/dot-vue-cli/issues"
   },
-  "homepage": "https://github.com/FrankKai/dot-vue#readme",
+  "homepage": "https://github.com/FrankKai/dot-vue-cli#readme",
   "dependencies": {
     "inquirer": "^7.3.3",
     "shelljs": "^0.8.4"
