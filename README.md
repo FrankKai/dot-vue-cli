@@ -1,4 +1,4 @@
-# dot-vue
+# dot-vue-cli
 
 Vue2.x single file component .vue generator.
 
@@ -37,7 +37,7 @@ Type `dot-vue` in terminal and follow the instructions.
 ```
 
 #### 2.generate target .vue file base on template.vue
-
+##### before
 ```html
 <!--template.vue -->
 <template>
@@ -67,7 +67,7 @@ export default {
 <style lang="scss" scoped></style>
 ```
 
-### after
+##### after
 
 ```html
 <!--target .vue file-->
