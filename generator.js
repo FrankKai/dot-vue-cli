@@ -10,6 +10,7 @@ import { {{mapState}} {{mapMutations}} {{mapActions}} } from 'vuex';
 
 export default {
   name: {{ name }},
+  props: { {{ props }} },
   {{{data}}} { return {{ data }} },
   computed: { {{ computed }} },
   watch: { {{ watch }} },
@@ -37,6 +38,17 @@ module.exports = (configs) => {
   fs.writeFileSync(`${file}`, template);
 
   shell.sed("-i", "{{ name }}", JSON.stringify(configs.name), file);
+
+  if (configs.props) {
+    const props = configs["props details"]
+      .split(",")
+      .map((prop) => `${prop}: { type: String },`)
+      .join("");
+
+    shell.sed("-i", "{{ props }}", props, file);
+  } else {
+    shell.sed("-i", "props: { {{ props }} },", "", file);
+  }
 
   if (configs.data) {
     const datas = configs["data details"].split(",");

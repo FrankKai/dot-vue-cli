@@ -30,6 +30,25 @@ var questions = [
   },
   {
     type: "confirm",
+    name: "props",
+    message: "Do you need props property?",
+  },
+  {
+    type: "input",
+    name: "props details",
+    message: "Write your props details",
+    when(answers) {
+      return answers.props;
+    },
+    validate(value) {
+      if (value && value.split(",").length > 0) {
+        return true;
+      }
+      return "Please enter props properties like this: foo,bar,baz";
+    },
+  },
+  {
+    type: "confirm",
     name: "data",
     message: "Do you need data property?",
   },

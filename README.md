@@ -4,7 +4,7 @@ Vue2.x single file component .vue generator.
 
 ### features
 
-1. Set `name`, `data`, `computed`, `watch` and choose `lifecycles`, `methods` by interactive command line.
+1. Set `name`, `props`, `data`, `computed`, `watch` and choose `lifecycles`, `methods` by interactive command line.
 2. Import vuex, `mapState`, `mapMutations`, `mapActions` by interactive command line.
 
 ### install
@@ -57,6 +57,7 @@ import { {{mapState}} {{mapMutations}} {{mapActions}} } from 'vuex';
 
 export default {
     name: {{ name }},
+    props: { {{ props }} },
     {{{data}}} { return {{ data }} },
     computed: { {{ computed }} },
     watch: { {{ watch }} },
@@ -86,6 +87,7 @@ import { mapState, mapMutations, mapActions } from "vuex";
 
 export default {
   name: "foo",
+  
   data() {
     return { a: "", b: "", c: "" };
   },
